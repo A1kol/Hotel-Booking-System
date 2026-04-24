@@ -31,4 +31,7 @@ The system uses **JWT (JSON Web Tokens)** for secure authentication. Access to s
 3. Run the Spring Boot application.
 4. Open `index.html` via Live Server or any web browser.
 
+
+Presentation link: https://canva.link/jz61lyxr2c7kbe7
+
 ---
