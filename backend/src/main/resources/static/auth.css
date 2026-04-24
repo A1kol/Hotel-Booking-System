@@ -1,0 +1,141 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    height: 100vh;
+    /* Фон на весь экран */
+    background: url('https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?q=80&w=2070') no-repeat center center/cover;
+    display: flex;
+    justify-content: flex-end; /* Сдвигаем всё вправо */
+    align-items: center;
+    overflow: hidden;
+}
+
+/* Оверлей, чтобы картинка слева не была слишком яркой */
+body::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: linear-gradient(to right, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.1) 100%);
+    z-index: 1;
+}
+
+.logo {
+    margin-bottom: 20px;
+}
+
+.input-field {
+    text-align: left;
+    margin-bottom: 25px;
+}
+
+.input-field label {
+    display: block;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-weight: 600;
+    color: #222;
+    margin-bottom: 10px;
+}
+
+.input-field input {
+    width: 100%;
+    padding: 12px 0;
+    border: none;
+    border-bottom: 1.5px solid #eee;
+    font-size: 16px;
+    color: #1a1a1a;
+    outline: none;
+    transition: all 0.3s;
+}
+
+.input-field input:focus {
+    border-bottom: 1.5px solid #c9a063;
+}
+
+
+.btn-primary:hover {
+    background: #c9a063;
+    letter-spacing: 3px;
+}
+
+.auth-footer {
+    margin-top: 30px;
+    font-size: 14px;
+    color: #666;
+}
+
+.auth-footer a {
+    color: #c9a063;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+#message {
+    margin-top: 20px;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.auth-card {
+    position: relative;
+    z-index: 2;
+    background: #ffffff;
+    height: 100vh;
+    width: 100%;
+    /* Увеличили ширину до 600px */
+    max-width: 600px;
+    /* Увеличили горизонтальные отступы для солидности */
+    padding: 60px 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-shadow: -15px 0 40px rgba(0,0,0,0.25);
+}
+
+/* Чуть увеличим заголовки, раз форма стала больше */
+h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 38px; /* Было 32px */
+    color: #1a1a1a;
+    margin-bottom: 12px;
+    letter-spacing: 1px;
+}
+
+#auth-subtitle {
+    font-size: 16px; /* Было 15px */
+    color: #777;
+    margin-bottom: 50px;
+}
+
+/* Кнопку тоже сделаем чуть массивнее под стать форме */
+.btn-primary {
+    width: 100%;
+    padding: 20px; /* Было 18px */
+    background: #1a1a1a;
+    color: #fff;
+    border: none;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 25px;
+}
+
+/* Адаптация под мобильные устройства */
+@media (max-width: 600px) {
+    .auth-card {
+        max-width: 100%;
+        padding: 30px;
+    }
+    body {
+        justify-content: center;
+    }
+}

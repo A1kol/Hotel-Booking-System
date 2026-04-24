@@ -1,0 +1,237 @@
+:root {
+    --gold: #c9a063;
+    --gold-hover: #b08a52;
+    --dark: #121212;
+    --light-bg: #f4f7f6;
+    --white: #ffffff;
+}
+
+* { box-sizing: border-box; }
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--light-bg);
+    margin: 0;
+    color: var(--dark);
+}
+
+/* Navbar */
+.navbar {
+    padding: 15px 50px;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 26px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.logo span { color: var(--gold); }
+
+.nav-links { display: flex; align-items: center; gap: 25px; }
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--dark);
+    font-size: 14px;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.nav-links a:hover { color: var(--gold); }
+
+.user-info { display: flex; align-items: center; gap: 15px; border-left: 1px solid #ddd; padding-left: 20px; }
+
+.logout-btn {
+    padding: 8px 18px;
+    background: var(--dark);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 13px;
+}
+
+/* Header */
+.main-header {
+    text-align: center;
+    padding: 60px 20px;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?q=80&w=2070');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    border-radius: 0 0 30px 30px;
+}
+
+.main-header h1 { font-family: 'Playfair Display', serif; font-size: 3rem; margin: 0; }
+
+/* Room Cards - Улучшенный дизайн */
+.room-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 30px;
+    padding: 40px 50px;
+}
+
+.room-card {
+    background: var(--white);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    transition: 0.3s;
+    position: relative;
+}
+
+.room-card:hover { transform: translateY(-10px); box-shadow: 0 15px 40px rgba(0,0,0,0.12); }
+
+.room-info { padding: 25px; }
+
+.room-info h3 { font-family: 'Playfair Display', serif; font-size: 1.5rem; margin: 0 0 10px; }
+
+.room-details { font-size: 14px; color: #666; margin-bottom: 20px; }
+
+.room-details span { display: block; margin-bottom: 5px; }
+
+.price-tag {
+    font-size: 1.4rem;
+    color: var(--gold);
+    font-weight: 600;
+    margin-bottom: 20px;
+    display: block;
+}
+
+.btn-select {
+    width: 100%;
+    padding: 14px;
+    background: var(--dark);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-select:hover { background: var(--gold); }
+
+/* Tables & Admin */
+.admin-section { padding: 40px 50px; }
+.section-title { font-family: 'Playfair Display', serif; font-size: 2rem; margin-bottom: 30px; }
+
+.table-wrapper { background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 5px 20px rgba(0,0,0,0.05); }
+
+.booking-table { width: 100%; border-collapse: collapse; }
+.booking-table th { background: #f8f9fa; padding: 15px; text-align: left; font-size: 13px; color: #888; }
+.booking-table td { padding: 15px; border-top: 1px solid #eee; }
+
+/* Status Badges */
+.status-badge { padding: 5px 12px; border-radius: 15px; font-size: 11px; font-weight: 600; text-transform: uppercase; }
+.status-pending { background: #fff4e6; color: #d97706; }
+.status-approved { background: #ecfdf5; color: #059669; }
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0,0,0,0.7);
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+}
+
+.modal-content {
+    background: white;
+    padding: 40px;
+    border-radius: 15px;
+    width: 450px;
+    position: relative;
+}
+.btn-approve {
+    background: #059669;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.close { position: absolute; right: 20px; top: 15px; font-size: 25px; cursor: pointer; }
+
+.form-group { margin-bottom: 20px; }
+.form-group label { display: block; margin-bottom: 8px; font-weight: 500; }
+.form-group input { width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 6px; }
+
+.btn-book { width: 100%; padding: 15px; background: var(--gold); color: white; border: none; border-radius: 8px; font-weight: 600; cursor: pointer; }
+
+/* Общие улучшения */
+.admin-section { max-width: 1100px; margin: 0 auto; padding: 40px 20px; }
+.section-subtitle { color: #888; margin-top: -25px; margin-bottom: 40px; }
+
+/* Сетка админки */
+.admin-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 30px;
+}
+
+.admin-card {
+    background: #fff;
+    padding: 35px;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.04);
+    border: 1px solid #f0f0f0;
+}
+
+.admin-card h3 { margin-top: 0; font-size: 1.2rem; display: flex; align-items: center; gap: 10px; }
+
+/* Форма в админке */
+.admin-form { display: flex; flex-direction: column; gap: 20px; }
+.input-group { display: flex; flex-direction: column; gap: 8px; }
+.input-group label { font-size: 12px; font-weight: 600; color: #555; text-transform: uppercase; }
+.input-group input, .input-group select {
+    padding: 12px 15px;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    font-family: inherit;
+    transition: 0.3s;
+}
+.input-group input:focus { border-color: var(--gold); outline: none; }
+
+.input-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+
+.btn-primary {
+    background: var(--dark);
+    color: #fff;
+    padding: 15px;
+    border: none;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-top: 10px;
+}
+.btn-primary:hover { background: var(--gold); transform: translateY(-2px); }
+
+/* Статистика */
+.admin-stats { display: flex; flex-direction: column; gap: 20px; }
+.stat-item {
+    background: #fff;
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.02);
+    border-left: 5px solid var(--gold);
+}
+.stat-item.info { border-left-color: #2ecc71; }
+.stat-item h4 { margin: 0; font-size: 14px; color: #888; }
+.stat-value { font-size: 28px; font-weight: 700; color: var(--dark); display: block; margin-top: 5px; }
