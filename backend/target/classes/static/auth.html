@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grand Hotel | Welcome</title>
+    <link rel="stylesheet" href="auth.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="page-wrapper">
+    <div class="auth-card">
+        <div class="auth-header">
+            <div class="logo">
+                <svg width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="#c9a063" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M3 7v1a3 3 0 0 0 6 0V7m0 1a3 3 0 0 0 6 0V7m0 1a3 3 0 0 0 6 0V7M4 21V4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v17M9 12h0m0 4h0m6-4h0m0 4h0"/></svg>
+            </div>
+            <h1 id="auth-title">Grand Hotel</h1>
+            <p id="auth-subtitle">Пожалуйста, войдите в систему</p>
+        </div>
+
+        <div class="auth-form">
+            <div class="input-field">
+                <label>Электронная почта</label>
+                <input type="email" id="email" placeholder="email@hotel.com">
+            </div>
+
+            <div class="input-field">
+                <label>Пароль</label>
+                <input type="password" id="password" placeholder="••••••••">
+            </div>
+
+            <button class="btn-primary" id="main-btn" onclick="handleSubmit()">Войти</button>
+        </div>
+
+        <div class="auth-footer">
+            <p id="toggle-text">Еще не зарегистрированы? <a href="#" onclick="toggleAuth(event)">Создать аккаунт</a></p>
+            <div id="message"></div>
+        </div>
+    </div>
+</div>
+
+<script src="auth.js"></script>
+</body>
+</html>
